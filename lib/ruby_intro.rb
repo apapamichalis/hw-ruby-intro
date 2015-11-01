@@ -21,26 +21,18 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  if arr.length <= 1
-    return false
-  else
+  result = false
+  if arr.length >= 2
     for i in 0...(arr.length-1) do
       for j in (i+1)...arr.length do
         sum = arr[i] + arr[j]
         if n == sum 
-          break
+          result = true
         end
       end
-      if n == sum 
-        break
-      end
-    end
-    if n == sum
-      return true
-    else
-      return false
     end
   end
+  return result
 end
 
 # Part 2
