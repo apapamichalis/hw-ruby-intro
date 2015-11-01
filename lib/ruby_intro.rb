@@ -42,9 +42,7 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  
-  
-  if s.length >= 1
+  if s.length > 0
     s.downcase!
     if /[bcdfghjklmnpqrstvwxz]/ =~ s[0]
       result = true
@@ -56,7 +54,16 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.length > 0
+    if /[^01]/ =~ s
+      result = false
+    elsif s[s.length-1] == "0" && s[s.length-2] == "0"
+      result = true
+    else 
+      result = false
+    end 
+    return result
+  end
 end
 
 # Part 3
